@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextMatch", "TextMatch\TextMatch.csproj", "{B07548F4-0A24-463F-8FB9-28E868FCFEFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextMatch.Tests", "TextMatch.Tests\TextMatch.Tests.csproj", "{517CE1C8-803B-4CB1-A227-1E749EE5A297}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{31B144C8-24E2-4A4F-8D90-6840DB7B3E99}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B07548F4-0A24-463F-8FB9-28E868FCFEFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B07548F4-0A24-463F-8FB9-28E868FCFEFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B07548F4-0A24-463F-8FB9-28E868FCFEFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B07548F4-0A24-463F-8FB9-28E868FCFEFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{517CE1C8-803B-4CB1-A227-1E749EE5A297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{517CE1C8-803B-4CB1-A227-1E749EE5A297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{517CE1C8-803B-4CB1-A227-1E749EE5A297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{517CE1C8-803B-4CB1-A227-1E749EE5A297}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
