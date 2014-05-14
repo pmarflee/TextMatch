@@ -174,6 +174,25 @@ namespace TextMatch.Tests
 		Assert.IsTrue(isMatch);
 		Assert.AreEqual(2, index);
 	    }
+
+	    [Test]
+	    public void Should_Find_No_Match_When_Start_Is_Less_Than_Zero()
+	    {
+                int? index;
+                bool isMatch = TextMatcher.TryFindIndexOf(Text, "Polly", -1, out index);
+                Assert.IsFalse(isMatch);
+                Assert.AreEqual(null, index);
+	    }
+
+	    [Test]
+	    public void Should_Find_No_Match_When_Start_Is_Greater_Than_Text_Length()
+	    {
+                int? index;
+                bool isMatch = TextMatcher.TryFindIndexOf(Text, "Polly", Text.Length, out index);
+                Assert.IsFalse(isMatch);
+                Assert.AreEqual(null, index);
+	    }
+
         }
 
         [TestFixture]

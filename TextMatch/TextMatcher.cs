@@ -32,7 +32,7 @@ namespace TextMatch
         /// <returns>True if the search is successful, otherwise false</returns>
         internal static bool TryFindIndexOf(string text, string subtext, int start, out int? index)
         {
-            if (String.IsNullOrEmpty(text) || String.IsNullOrEmpty(subtext) || text.Length < subtext.Length)
+            if (String.IsNullOrEmpty(text) || String.IsNullOrEmpty(subtext) || start < 0 || text.Length < subtext.Length)
             {
                 index = null;
                 return false;
