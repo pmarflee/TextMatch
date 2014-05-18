@@ -32,40 +32,21 @@ namespace TextMatch
         /// <returns>True if the search is successful, otherwise false</returns>
         internal static bool TryFindIndexOf(string text, string subtext, int start, out int? index)
         {
-            if (String.IsNullOrEmpty(text) || String.IsNullOrEmpty(subtext) || start < 0 || text.Length < subtext.Length)
+            if (String.IsNullOrEmpty(text) || String.IsNullOrEmpty(subtext) || start < 0)
             {
                 index = null;
                 return false;
             }
 
-            int textIndex = start;
-
-            while (textIndex < text.Length)
+            for (int textIndex = start; textIndex < text.Length - subtext.Length + 1; textIndex++)
             {
-                int subtextIndex = 0;
-                bool matched = true;
-
-                while (subtextIndex < subtext.Length)
+                for (int subtextIndex = 0; subtextIndex < subtext.Length; subtextIndex++)
                 {
-                    int textIndexOffset = textIndex + subtextIndex;
-
-		    // Abandon the match if we have run out of characters to search or if the characters don't match at the current search position
-                    if (textIndexOffset >= text.Length || !AreCharsEqual(text[textIndexOffset], subtext[subtextIndex]))
-                    {
-                        matched = false;
-                        break;
-                    }
-
-                    subtextIndex++;
-                }
-
-                if (matched)
-                {
+                    if (!AreCharsEqual(text[textIndex + subtextIndex], subtext[subtextIndex])) break;
+                    if (subtextIndex < subtext.Length - 1) continue;
                     index = textIndex;
                     return true;
                 }
-
-                textIndex++;
             }
 
             index = null;
